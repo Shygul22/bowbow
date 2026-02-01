@@ -31,7 +31,6 @@ const Testimonials = () => {
             <div key={index} className="testimonial-card relative">
               {/* Opening Quote */}
               <Quote className="w-8 h-8 text-accent/30 mb-4 mx-auto rotate-180" />
-<<<<<<< HEAD
 
               <h4 className="font-heading text-lg font-semibold text-accent mb-4 underline underline-offset-4">
                 {testimonial.name}
@@ -41,23 +40,11 @@ const Testimonials = () => {
                 {testimonial.text}
               </p>
 
-=======
-              
-              <h4 className="font-heading text-lg font-semibold text-accent mb-4 underline underline-offset-4">
-                {testimonial.name}
-              </h4>
-              
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
-                {testimonial.text}
-              </p>
-              
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
               {/* Closing Quote */}
               <Quote className="w-8 h-8 text-accent/30 mx-auto" />
             </div>
           ))}
         </div>
-<<<<<<< HEAD
 
         <div className="text-center mt-12">
           <a
@@ -69,8 +56,6 @@ const Testimonials = () => {
             Read more reviews on Google
           </a>
         </div>
-=======
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
       </div>
     </section>
   );

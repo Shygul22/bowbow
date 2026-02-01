@@ -22,13 +22,9 @@ const Hero = () => {
           Coimbatore
         </p>
         <a
-<<<<<<< HEAD
           href="https://wa.me/918599869964?text=Hi,%20I%20would%20like%20to%20place%20an%20order"
           target="_blank"
           rel="noopener noreferrer"
-=======
-          href="#order"
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
           className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
         >
           Order Now

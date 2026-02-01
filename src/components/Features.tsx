@@ -25,28 +25,10 @@ const Features = () => {
   return (
     <section className="py-20 bg-background">
       <div className="container mx-auto px-4">
-<<<<<<< HEAD
         {/* Feature Cards */}
         <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {features.map((feature, index) => (
             <a key={index} href="/gallery" className="feature-card block hover:no-underline">
-=======
-        {/* Logo */}
-        <div className="flex justify-center mb-12">
-          <div className="text-center">
-            <div className="w-24 h-24 mx-auto mb-4 rounded-full bg-primary flex items-center justify-center">
-              <span className="text-4xl">🐕</span>
-            </div>
-            <h2 className="font-heading text-2xl text-primary font-semibold">Bow Bow Bliss</h2>
-            <p className="text-muted-foreground text-sm">RESTAURANT</p>
-          </div>
-        </div>
-
-        {/* Feature Cards */}
-        <div className="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {features.map((feature, index) => (
-            <div key={index} className="feature-card">
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
               <div className="w-16 h-16 mx-auto mb-6 rounded-full bg-accent/10 flex items-center justify-center">
                 <feature.icon className="w-8 h-8 text-accent" />
               </div>
@@ -56,14 +38,7 @@ const Features = () => {
               <p className="text-muted-foreground text-sm leading-relaxed mb-6">
                 {feature.description}
               </p>
-<<<<<<< HEAD
             </a>
-=======
-              <a href="#order" className="btn-order">
-                Order Now
-              </a>
-            </div>
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
           ))}
         </div>
       </div>

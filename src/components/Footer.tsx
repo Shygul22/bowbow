@@ -9,15 +9,9 @@ const Footer = () => {
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact Us</h4>
             <div className="space-y-3 text-cream/70">
-<<<<<<< HEAD
               <a href="tel:+918599869964" className="flex items-center gap-2 hover:text-cream transition-colors">
                 <Phone size={16} />
                 +91 85998 69964
-=======
-              <a href="tel:+918598893964" className="flex items-center gap-2 hover:text-cream transition-colors">
-                <Phone size={16} />
-                +91 8598893964
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
               </a>
               <a href="mailto:bowbowbliss@gmail.com" className="flex items-center gap-2 hover:text-cream transition-colors">
                 <Mail size={16} />
@@ -47,11 +41,7 @@ const Footer = () => {
               <p className="font-medium text-cream">Everyday:</p>
               <p>12:30pm-3:45pm</p>
               <p>5:30pm-9pm</p>
-<<<<<<< HEAD
 
-=======
-              
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
               <p className="font-medium text-cream mt-4">Puppies play Hours</p>
               <p className="text-sm">Everyday:</p>
               <p className="text-sm">12:30pm-2:30pm</p>
@@ -65,11 +55,7 @@ const Footer = () => {
             <h4 className="font-heading text-lg font-semibold mb-4">Follow Us</h4>
             <div className="flex gap-4">
               <a
-<<<<<<< HEAD
                 href="https://www.instagram.com/bowbowbliss"
-=======
-                href="https://instagram.com"
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-cream/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
@@ -77,11 +63,7 @@ const Footer = () => {
                 <Instagram size={24} />
               </a>
               <a
-<<<<<<< HEAD
                 href="https://www.facebook.com/bowbowbliss"
-=======
-                href="https://facebook.com"
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-12 h-12 rounded-full bg-cream/10 flex items-center justify-center hover:bg-cream/20 transition-colors"
@@ -93,7 +75,6 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-<<<<<<< HEAD
         <div className="mt-12 pt-8 border-t border-cream/20 text-center text-cream/50 text-sm space-y-2">
           <p>© 2026 ZENJOURNEY. ALL RIGHTS RESERVED.</p>
           <p className="text-xs">
@@ -115,10 +96,6 @@ const Footer = () => {
             </a>
             .
           </p>
-=======
-        <div className="mt-12 pt-8 border-t border-cream/20 text-center text-cream/50 text-sm">
-          <p>© 2025 Bow Bow Bliss. All rights reserved.</p>
->>>>>>> 13d93773cb354053cb943c39c4478d1e0d3ecaa0
         </div>
       </div>
     </footer>
