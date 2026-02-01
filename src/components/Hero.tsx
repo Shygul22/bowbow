@@ -13,19 +13,19 @@ const Hero = () => {
 
       {/* Content */}
       <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-        <h1 className="font-heading text-4xl md:text-6xl lg:text-7xl text-cream font-bold leading-tight mb-4">
+        <h1 className="font-heading text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-cream font-bold leading-tight mb-4">
           A Pet-Themed & A Pet-Friendly
           <br />
           <span className="text-accent">Restaurant</span>
         </h1>
-        <p className="text-cream/80 text-lg md:text-xl mb-8 font-light">
+        <p className="text-cream/80 text-base sm:text-lg md:text-xl mb-6 md:mb-8 font-light">
           Coimbatore
         </p>
         <a
           href="https://wa.me/918599869964?text=Hi,%20I%20would%20like%20to%20place%20an%20order"
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-block px-8 py-4 bg-primary text-primary-foreground rounded-full font-medium text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
+          className="inline-block px-6 py-3 sm:px-8 sm:py-4 bg-primary text-primary-foreground rounded-full font-medium text-base sm:text-lg hover:opacity-90 transition-all shadow-lg hover:shadow-xl"
         >
           Order Now
         </a>

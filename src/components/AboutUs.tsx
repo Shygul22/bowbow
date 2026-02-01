@@ -27,12 +27,12 @@ const AboutUs = () => {
                 <img
                   src={therapyDog}
                   alt="Therapy dog at Bow Bow Bliss"
-                  className="w-full h-80 object-cover"
+                  className="w-full h-64 sm:h-72 md:h-80 object-cover"
                 />
               </div>
-              
+
               {/* Rotating Badge */}
-              <div className="absolute -bottom-8 -right-4 w-32 h-32 animate-spin-slow">
+              <div className="absolute -bottom-6 -right-2 sm:-bottom-8 sm:-right-4 w-24 h-24 sm:w-32 sm:h-32 animate-spin-slow">
                 <svg viewBox="0 0 100 100" className="w-full h-full">
                   <defs>
                     <path
@@ -50,7 +50,7 @@ const AboutUs = () => {
                     x="50"
                     y="55"
                     textAnchor="middle"
-                    className="text-3xl"
+                    className="text-2xl sm:text-3xl"
                   >
                     🐾
                   </text>

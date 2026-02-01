@@ -4,7 +4,7 @@ const Footer = () => {
   return (
     <footer id="contact" className="bg-dark-section text-cream py-16">
       <div className="container mx-auto px-4">
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 max-w-6xl mx-auto">
           {/* Contact Us */}
           <div>
             <h4 className="font-heading text-lg font-semibold mb-4">Contact Us</h4>
@@ -75,9 +75,9 @@ const Footer = () => {
         </div>
 
         {/* Copyright */}
-        <div className="mt-12 pt-8 border-t border-cream/20 text-center text-cream/50 text-sm space-y-2">
+        <div className="mt-12 pt-8 border-t border-cream/20 text-center text-cream/50 text-xs sm:text-sm space-y-2">
           <p>© 2026 ZENJOURNEY. ALL RIGHTS RESERVED.</p>
-          <p className="text-xs">
+          <p className="text-[10px] sm:text-xs leading-relaxed px-2">
             Powered by Custom SaaS Solutions & Business Consultant developed by ZENJOURNEY.{" "}
             <a
               href="https://zenjourney.in"
