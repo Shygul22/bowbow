@@ -1,0 +1,1 @@
+Development Language: React + TypeScript (TSX) with Tailwind CSS
