@@ -1,76 +1,103 @@
-import heroFood from "@/assets/hero-food.jpg";
-import noodles from "@/assets/noodles.jpg";
-import therapyDog from "@/assets/therapy-dog.jpg";
+import { useEffect, useState } from "react";
 
-const galleryImages = [
-    {
-        src: heroFood,
-        alt: "Delicious Food Spread",
-        category: "Food",
-    },
-    {
-        src: therapyDog,
-        alt: "Therapy Dog",
-        category: "Pets",
-    },
-    {
-        src: noodles,
-        alt: "Tasty Noodles",
-        category: "Food",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        alt: "Restaurant Ambience",
-        category: "Ambience",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        alt: "Dining Area",
-        category: "Ambience",
-    },
-    {
-        src: "https://images.unsplash.com/photo-1587595431973-160d0d94add1?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3",
-        alt: "Happy Dog",
-        category: "Pets",
-    },
-];
+/**
+ * 🔴 REQUIRED
+ * Replace these with your real values
+ */
+const FOLDER_ID = "14Ltj4QN1nXF-sWNKm_51UKc-KHZojeTe";
+const API_KEY = "AIzaSyA-09CtW66CLvNENEo7iEGvy0O8RbNPmBw";
 
+/**
+ * Image type (for clarity)
+ */
 const Gallery = () => {
-    return (
-        <section id="gallery" className="py-20 bg-background">
-            <div className="container mx-auto px-4">
-                <div className="text-center mb-12">
-                    <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-                        Our Gallery
-                    </h2>
-                    <div className="wave-divider" />
-                    <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
-                        A glimpse into the cozy moments, delicious food, and furry friends at Bow Bow Bliss.
-                    </p>
-                </div>
+  const [images, setImages] = useState([]);
+  const [loading, setLoading] = useState(true);
 
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
-                    {galleryImages.map((image, index) => (
-                        <div
-                            key={index}
-                            className="group relative overflow-hidden rounded-2xl aspect-square shadow-md hover:shadow-xl transition-all duration-300"
-                        >
-                            <img
-                                src={image.src}
-                                alt={image.alt}
-                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                            />
-                            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
-                                <span className="text-white font-medium text-lg px-4 py-2 bg-primary/80 rounded-full backdrop-blur-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
-                                    {image.category}
-                                </span>
-                            </div>
-                        </div>
-                    ))}
+  useEffect(() => {
+    const fetchImages = async () => {
+      try {
+        const response = await fetch(
+          `https://www.googleapis.com/drive/v3/files?q='${FOLDER_ID}'+in+parents&fields=files(id,name,mimeType)&key=${API_KEY}`
+        );
+
+        const data = await response.json();
+
+        // Filter only image files
+        const imageFiles = data.files.filter((file) =>
+          file.mimeType.startsWith("image/")
+        );
+
+        setImages(imageFiles);
+      } catch (error) {
+        console.error("Error fetching images from Google Drive:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchImages();
+  }, []);
+
+  return (
+    <section id="gallery" className="py-20 bg-background">
+      <div className="container mx-auto px-4">
+
+        {/* Header */}
+        <div className="text-center mb-12">
+          <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
+            Our Gallery
+          </h2>
+          <div className="wave-divider" />
+          <p className="text-muted-foreground mt-4 max-w-2xl mx-auto">
+            Images loaded directly from our Google Drive gallery.
+          </p>
+        </div>
+
+        {/* Loading State */}
+        {loading && (
+          <p className="text-center text-muted-foreground">
+            Loading images...
+          </p>
+        )}
+
+        {/* Gallery Grid */}
+        {!loading && (
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+            {images.map((image) => (
+              <div
+                key={image.id}
+                className="group relative overflow-hidden rounded-2xl aspect-square shadow-md hover:shadow-xl transition-all duration-300"
+              >
+                <img
+  src={`https://drive.google.com/uc?export=view&id=FILE_ID
+${image.id}`}
+  alt={image.name}
+  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+/>
+
+
+                {/* Overlay */}
+                <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                  <span className="text-white font-medium text-lg px-4 py-2 bg-primary/80 rounded-full backdrop-blur-sm transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300">
+                    Gallery Image
+                  </span>
                 </div>
-            </div>
-        </section>
-    );
+              </div>
+            ))}
+          </div>
+        )}
+
+        {/* Empty State */}
+        {!loading && images.length === 0 && (
+          <p className="text-center text-muted-foreground">
+            No images found in the Google Drive folder.
+          </p>
+        )}
+
+      </div>
+    </section>
+  );
 };
 
 export default Gallery;
